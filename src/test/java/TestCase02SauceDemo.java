@@ -56,7 +56,6 @@ public class TestCase02SauceDemo extends BaseTestClass {
 
         //Click on item
         Inventory sauceLabsBackpackItemClick = inventory.clickItemSauceLabsBackpack();
-        Thread.sleep(3000);
 
         //Verify Item Name
         String sauceLabsBackpackVerifyName = inventoryItem.getItemNameText();
@@ -86,18 +85,15 @@ public class TestCase02SauceDemo extends BaseTestClass {
 
         //ADD TO CART
         InventoryItem addToCartClick = inventoryItem.clickAddToCart();
-        Thread.sleep(1000);
 
         //BACK TO PRODUCTS
         InventoryItem backToProductsClick = inventoryItem.clickBackToProducts();
 
         //ADD TO CART FLEECE JACKET
         Inventory addToCartFleeceJacketClick = inventory.clickAddToCartFleeceJacket();
-        Thread.sleep(1000);
 
         //SHOPPING CART CLICK
         Inventory shoppingCartClick = inventory.clickShoppingCart();
-        Thread.sleep(1000);
 
         //CHECKOUT CLICK
         Cart checkoutClick = cart.clickOnCheckout();
@@ -105,13 +101,11 @@ public class TestCase02SauceDemo extends BaseTestClass {
         //FILL REQUIRED TEXT FIELDS AND CLICK CONTINUE
         CheckoutStepOne checkoutTextFieldsFill =
                 checkoutStepOne.typeFirstName(firstName).typeLastName(lastName).typeZipPostalCode(zipCode);
-        Thread.sleep(1000);
 
         CheckoutStepOne checkoutContinueClick = checkoutStepOne.clickOnContinue();
 
         //CLICK FINISH
         CheckoutStepTwo checkoutFinishClick = checkoutStepTwo.clickOnFinish();
-        Thread.sleep(2000);
 
         //Verify "THANK YOU FOR YOUR ORDER" is displayed
         String getThankYouMessageCheckout = checkoutComplete.getThankYouMessageCheckout();
@@ -120,12 +114,7 @@ public class TestCase02SauceDemo extends BaseTestClass {
 
         //LOGOUT
 
-        CheckoutComplete buttonBurgerMenu = checkoutComplete.clickButtonBurgerMenu();
-        Thread.sleep(1000);
-
-        CheckoutComplete logoutClick = checkoutComplete.logoutClick();
-        Thread.sleep(2000);
-
+        CheckoutComplete Logout = checkoutComplete.clickButtonBurgerMenu().logoutClick();
     }
 
     @AfterMethod(alwaysRun = true)
